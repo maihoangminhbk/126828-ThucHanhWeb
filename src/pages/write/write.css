@@ -19,6 +19,13 @@
     display: flex;
     align-items: center;
 }
+.writeInputText{
+    height: 100vh;
+    margin: 1rem 1rem 1rem 0;
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+}
 
 .writeIcon{
     border: 2px solid ;
@@ -43,10 +50,10 @@
     outline: none;
 }
 
-.writeText{
+/* .writeText{
     font-size: 20px;
     height: 100vh;
-}
+} */
 
 .writeSubmit{
     position: absolute;
