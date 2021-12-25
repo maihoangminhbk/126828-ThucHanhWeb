@@ -4,6 +4,8 @@ import TopBar from "./components/topbar/TopBar";
 import Single from "./pages/single/Single";
 import Write from "./pages/write/Write";
 import Settings from "./pages/settings/Settings";
+import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
 import {
   BrowserRouter as Router,
   Routes,
@@ -14,14 +16,17 @@ import {
 
 function App() {
   // continued ..... user?
+  const user = false;
   return (
     <Router>
       <TopBar />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route  path="/write" element={<Write />} />
-        <Route  path="/settings" element={<Settings />} />
-        <Route  path="/post/:postId" element={<Single />} />
+        <Route  path="/register" element={user ? <Home /> : <Register />} />
+        <Route  path="/login" element={user ? <Home /> : <Login />} />
+        <Route  path="/write" element={user ? <Write /> : <Register />} />
+        <Route  path="/settings" element={user ? <Settings /> : <Register />} />
+        <Route  path="/post/:postId" element={user ? <Single /> : <Register />} />
       </Routes>
     </Router>
   );

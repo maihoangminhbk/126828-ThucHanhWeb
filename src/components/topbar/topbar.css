@@ -21,11 +21,38 @@
     flex: 6;
 }
 
-.topImg{
+.topDownImg{
     width: 40px;
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
+    cursor: pointer;
+}
+
+.topDownContent{
+    display: none;
+    position: absolute;
+    background-color: white;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.topDownContent li{
+
+    color: #666;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+
+}
+
+.topDownContent > li:hover{
+    background-color: #ddd;
+    cursor: pointer;
+    
+}
+
+.topDown:hover .topDownContent{
+    display: block;
 }
 
 .topList{
@@ -48,4 +75,7 @@
     color: #666;
     cursor: pointer;
     margin-left: 15px;
+    float: right;
+    padding: 0 40px;
+    
 }
