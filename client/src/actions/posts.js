@@ -13,6 +13,19 @@ export const getPost = (id) => async (dispatch) => {
   }
 };
 
+// export const setColor = (text) => async (dispatch) => {
+//   try {
+//     dispatch({ type: START_LOADING });
+
+//     const { text } = await api.changeColor(text);
+
+//     dispatch({ type: FETCH_POST, payload: { post: text } });
+//     console.log(text);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
 export const getPosts = (page) => async (dispatch) => {
   try {
     dispatch({ type: START_LOADING });

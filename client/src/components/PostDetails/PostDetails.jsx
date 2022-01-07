@@ -3,11 +3,11 @@ import { Paper, Typography, CircularProgress, Divider } from '@material-ui/core/
 import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment';
 import { useParams, useHistory, Link } from 'react-router-dom';
-
+import {Helmet} from 'react-helmet';
 import { getPost, getPostsBySearch } from '../../actions/posts';
 import CommentSection from './CommentSection';
 import useStyles from './styles';
-
+// import * as api from '../api/index.js';
 const Post = () => {
   const { post, posts, isLoading } = useSelector((state) => state.posts);
   const dispatch = useDispatch();
@@ -41,6 +41,9 @@ const Post = () => {
 
   return (
     <Paper style={{ padding: '20px', borderRadius: '15px' }} elevation={6}>
+            <Helmet>
+                <style>{'body { background-color: gray; }'}</style>
+            </Helmet>
       <div className={classes.card}>
         <div className={classes.section}>
           <Typography variant="h3" component="h2">{post.title}</Typography>

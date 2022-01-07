@@ -7,7 +7,7 @@ import ThumbUpAltOutlined from '@material-ui/icons/ThumbUpAltOutlined';
 import { useDispatch } from 'react-redux';
 import moment from 'moment';
 import { useHistory } from 'react-router-dom';
-
+import {Helmet} from 'react-helmet';
 import { likePost, deletePost } from '../../../actions/posts';
 import useStyles from './styles';
 
@@ -51,6 +51,7 @@ const Post = ({ post, setCurrentId }) => {
   };
 
   return (
+
     <Card className={classes.card} raised elevation={6}>
       <ButtonBase
         component="span"
@@ -96,6 +97,7 @@ const Post = ({ post, setCurrentId }) => {
         )}
       </CardActions>
     </Card>
+
   );
 };
 

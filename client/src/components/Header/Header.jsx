@@ -1,16 +1,20 @@
 import "./header.css";
 import { Link, useHistory } from 'react-router-dom';
 import React, { useState } from 'react';
-import { Button } from '@material-ui/core';
+import { Button, Toolbar } from '@material-ui/core';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Header() {
-//   const history = useHistory();
+  const history = useHistory();
 //   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
-//   const post = () => {
-//     history.push('/posts');
-//   }
+const memory = () => {
+    history.push('/memory');
+  }
 
+// //   const post = () => {
+// //     history.push('/post');
+//   }
+const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
 
   return (
     // <div className="header">
@@ -23,15 +27,20 @@ export default function Header() {
     //     src="https://images.pexels.com/photos/1167355/pexels-photo-1167355.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     //     alt=""
     //   />
-          <div>
+    <div>
               <header class="masthead text-center text-white">
             <div class="masthead-content">
                 <div class="container px-5">
                     <h1 class="masthead-heading mb-0">Writing Diary Everyday</h1>
                     <h2 class="masthead-subheading mb-0">Will Make You More Happy</h2>
-                    {/* {user?.result ? (
-                    <span class="btn btn-primary btn-xl rounded-pill mt-5"  onClick={post}>Create Now</span>
-                    ) : (<Button component={Link} to="/auth" variant="contained" color="primary">Sign In</Button>)} */}
+                    {user?.result ? (
+                    <div>
+                        <div>
+                            {/* <span class="btn btn-primary btn-xl rounded-pill mt-5" onClick={post}>Post</span> */}
+                            <span class="btn btn-primary btn-xl rounded-pill mt-5" onClick={memory}>Memories</span>
+                        </div>
+                    </div>
+                    ) : (" ")}
                 </div>
             </div>
             <div class="bg-circle-1 bg-circle"></div>
@@ -47,8 +56,8 @@ export default function Header() {
                     </div>
                     <div class="col-lg-6 order-lg-1">
                         <div class="p-5">
-                            <h2 class="display-4">For those about to rock...</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+                            <h2 class="display-4">Achieve your goals</h2>
+                            <p>A journal is a good place to write your goals, ambitions, aspirations and new year resolutions. By keeping them in a diary, you can monitor your progress and feel motivated to continue to focus on your next milestone!</p>
                         </div>
                     </div>
                 </div>
@@ -62,8 +71,8 @@ export default function Header() {
                     </div>
                     <div class="col-lg-6">
                         <div class="p-5">
-                            <h2 class="display-4">We salute you!</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+                            <h2 class="display-4">Memory can make you fun!</h2>
+                            <p>Keeping a journal does improve your ability to recall the past. It keeps the memory fresh in your head. However it may only keep the memory fresh for a couple of weeks maybe months, depending on how memorable the memory is.</p>
                         </div>
                     </div>
                 </div>
@@ -77,17 +86,18 @@ export default function Header() {
                     </div>
                     <div class="col-lg-6 order-lg-1">
                         <div class="p-5">
-                            <h2 class="display-4">Let there be rock!</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+                            <h2 class="display-4">Save memory with famimy</h2>
+                            <p>It's the best time to write diary to save memory with your family. As long as, start now !</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        
         <footer class="py-5 bg-white">
             <div class="container px-5"><p class="m-0 text-center text-black small">Copyright &copy; Hedspi Team Fight</p></div>
         </footer>
-          </div>
+    </div>
     
   );
 }

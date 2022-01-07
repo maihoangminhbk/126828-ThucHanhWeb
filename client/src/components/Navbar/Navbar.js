@@ -29,9 +29,9 @@ const Navbar = () => {
     history.push('/posts');
   }
 
-  const memory = () => {
-    history.push('/memory');
-  }
+  // const memory = () => {
+  //   history.push('/memory');
+  // }
 
   useEffect(() => {
     const token = user?.token;
@@ -56,7 +56,7 @@ const Navbar = () => {
       <div className={classes.navlinks}>
         <div>
           <span variant="contained" className={classes.link} onClick={post}>Post</span>
-          <span variant="contained" className={classes.link} onClick={memory}>Memories</span>
+          {/* <span variant="contained" className={classes.link} onClick={memory}>Memories</span> */}
         </div>
       </div>
       ) : (" ")}
